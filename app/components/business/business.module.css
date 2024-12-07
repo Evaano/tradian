@@ -1,0 +1,59 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2d3748; /* Slate-800 equivalent */
+    padding: 1rem;
+    color: white;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+.menuButton {
+    display: block;
+}
+
+.main {
+    display: flex;
+    flex: 1;
+    background-color: white;
+}
+
+.sidebar {
+    display: none;
+}
+
+.content {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+/* Responsive styles */
+@media (min-width: 640px) {
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        width: 20rem;
+        border-right: 1px solid #e2e8f0; /* Gray-200 equivalent */
+        background-color: #f7fafc; /* Gray-50 equivalent */
+    }
+}
+
+.mainTitle {
+    font-size: 3rem;
+    font-weight: bold;
+}

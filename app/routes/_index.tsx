@@ -1,141 +1,491 @@
+import {
+  AspectRatio,
+  BackgroundImage,
+  Box,
+  Button,
+  Card,
+  Container,
+  Flex,
+  Group,
+  Image,
+  Paper,
+  SimpleGrid,
+  Stack,
+  Text,
+  TextInput,
+  Title,
+} from "@mantine/core";
+import { useToggle } from "@mantine/hooks";
 import type { MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
+import { useState } from "react";
+import { CiExport } from "react-icons/ci";
+import { GiCommercialAirplane } from "react-icons/gi";
+import { LuImport } from "react-icons/lu";
+import { MdQrCodeScanner } from "react-icons/md";
+import { PiBoxArrowDownFill } from "react-icons/pi";
+import { RiCustomerServiceFill } from "react-icons/ri";
 
-import { useOptionalUser } from "~/utils";
+import cardClasses from "~/components/article-card/article-card.module.css";
+import classes from "~/components/article-card/card.module.css";
+import { Faq } from "~/components/faq/faq";
+import {Footer} from "~/components/Footer/footer";
 
 export const meta: MetaFunction = () => [{ title: "Remix Notes" }];
 
-export default function Index() {
-  const user = useOptionalUser();
-  return (
-    <main className="relative min-h-screen bg-white sm:flex sm:items-center sm:justify-center">
-      <div className="relative sm:pb-16 sm:pt-8">
-        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
-            <div className="absolute inset-0">
-              <img
-                className="h-full w-full object-cover"
-                src="https://user-images.githubusercontent.com/1500684/158276320-c46b661b-8eff-4a4d-82c6-cf296c987a12.jpg"
-                alt="BB King playing blues on his Gibson 'Lucille' guitar"
-              />
-              <div className="absolute inset-0 bg-[color:rgba(27,167,254,0.5)] mix-blend-multiply" />
-            </div>
-            <div className="relative px-4 pb-8 pt-16 sm:px-6 sm:pb-14 sm:pt-24 lg:px-8 lg:pb-20 lg:pt-32">
-              <h1 className="text-center text-6xl font-extrabold tracking-tight sm:text-8xl lg:text-9xl">
-                <span className="block uppercase text-blue-500 drop-shadow-md">
-                  Blues Stack
-                </span>
-              </h1>
-              <p className="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-3xl">
-                Check the README.md file for instructions on how to get this
-                project deployed.
-              </p>
-              <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
-                {user ? (
-                  <Link
-                    to="/notes"
-                    className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-blue-700 shadow-sm hover:bg-blue-50 sm:px-8"
-                  >
-                    View Notes for {user.email}
-                  </Link>
-                ) : (
-                  <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
-                    <Link
-                      to="/join"
-                      className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-blue-700 shadow-sm hover:bg-blue-50 sm:px-8"
-                    >
-                      Sign up
-                    </Link>
-                    <Link
-                      to="/login"
-                      className="flex items-center justify-center rounded-md bg-blue-500 px-4 py-3 font-medium text-white hover:bg-blue-600"
-                    >
-                      Log In
-                    </Link>
-                  </div>
-                )}
-              </div>
-              <a href="https://remix.run">
-                <img
-                  src="https://user-images.githubusercontent.com/1500684/158298926-e45dafff-3544-4b69-96d6-d3bcc33fc76a.svg"
-                  alt="Remix"
-                  className="mx-auto mt-16 w-full max-w-[12rem] md:max-w-[16rem]"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
+export default function Test() {
+  const [buttonState, toggleButtonState] = useToggle([
+    "check-declaration",
+    "container-tracking",
+  ]);
+  const [secondButtonState, toggleSecondButtonState] = useToggle([
+    "import",
+    "export",
+  ]);
+  const [cNumber, setCNumber] = useState("");
+  const [rNumber, setRNumber] = useState("");
+  const [containerID, setContainerID] = useState("");
 
-        <div className="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8">
-          <div className="mt-6 flex flex-wrap justify-center gap-8">
-            {[
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157764397-ccd8ea10-b8aa-4772-a99b-35de937319e1.svg",
-                alt: "Fly.io",
-                href: "https://fly.io",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/158238105-e7279a0c-1640-40db-86b0-3d3a10aab824.svg",
-                alt: "PostgreSQL",
-                href: "https://www.postgresql.org/",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157764484-ad64a21a-d7fb-47e3-8669-ec046da20c1f.svg",
-                alt: "Prisma",
-                href: "https://prisma.io",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157764276-a516a239-e377-4a20-b44a-0ac7b65c8c14.svg",
-                alt: "Tailwind",
-                href: "https://tailwindcss.com",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157764454-48ac8c71-a2a9-4b5e-b19c-edef8b8953d6.svg",
-                alt: "Cypress",
-                href: "https://www.cypress.io",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157772386-75444196-0604-4340-af28-53b236faa182.svg",
-                alt: "MSW",
-                href: "https://mswjs.io",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157772447-00fccdce-9d12-46a3-8bb4-fac612cdc949.svg",
-                alt: "Vitest",
-                href: "https://vitest.dev",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157772662-92b0dd3a-453f-4d18-b8be-9fa6efde52cf.png",
-                alt: "Testing Library",
-                href: "https://testing-library.com",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157772934-ce0a943d-e9d0-40f8-97f3-f464c0811643.svg",
-                alt: "Prettier",
-                href: "https://prettier.io",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157772990-3968ff7c-b551-4c55-a25c-046a32709a8e.svg",
-                alt: "ESLint",
-                href: "https://eslint.org",
-              },
-              {
-                src: "https://user-images.githubusercontent.com/1500684/157773063-20a0ed64-b9f8-4e0b-9d1e-0b65a3d4a6db.svg",
-                alt: "TypeScript",
-                href: "https://typescriptlang.org",
-              },
-            ].map((img) => (
-              <a
-                key={img.href}
-                href={img.href}
-                className="flex h-16 w-32 justify-center p-1 grayscale transition hover:grayscale-0 focus:grayscale-0"
+  const handleButtonClick = () => {
+    toggleButtonState();
+  };
+
+  const handleSecondButtonClick = () => {
+    toggleSecondButtonState();
+  };
+
+  const mockdata = [
+    {
+      title: "User Acceptance Testing for MNSW Begins",
+      image:
+          "https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/7c5f9dfe-f9ce-4ffb-a255-46f04979aecf/uat4.jpg?t=1721637767",
+      date: "Dec 06, 2024",
+    },
+    {
+      title: "The Need for the MNSW System",
+      image:
+          "https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/9e45f61b-4549-4d83-bab7-b4cee6613e67/frank-mckenna-tjX_sniNzgQ-unsplash.jpg?t=1725287349",
+      date: "Dec 06, 2024",
+    },
+    {
+      title:
+          "Extensive Preparations and Activities Pave the Way for Rollout of MNSW",
+      image:
+          "https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/88fc77f6-aec5-49df-89a7-83fe0679e972/GWIvMWmW4AAmpTM.jpg?t=1725287775",
+      date: "Dec 06, 2024",
+    },
+  ];
+
+  const cards = mockdata.map((article) => (
+      <Card
+          key={article.title}
+          p="md"
+          radius="lg"
+          component="a"
+          shadow={"md"}
+          href="#"
+          className={cardClasses.card}
+      >
+        <AspectRatio ratio={1920 / 1080}>
+          <Image src={article.image} />
+        </AspectRatio>
+        <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md">
+          {article.date}
+        </Text>
+        <Text className={cardClasses.title} mt={5}>
+          {article.title}
+        </Text>
+      </Card>
+  ));
+
+  return (
+      <Paper style={{
+        backgroundColor: "#F6F6F6"
+      }}>
+        <Container
+            size={"xl"}
+            style={{
+              position: "relative",
+              paddingBottom: "4rem",
+              paddingTop: "2rem",
+              backgroundColor: "#F6F6F6"
+            }}
+        >
+          <Box pos={"relative"}>
+            <BackgroundImage
+                radius="xl"
+                bg={
+                  "linear-gradient(339.06deg, #a2a1e926 7.33%, #5898bb1e 41.36%, #ff373726 79.12%)"
+                }
+                mih={800}
+                src={"https://i.imgur.com/9Zuz6Nj.jpeg"}
+                p={150}
+            >
+              <Stack h={300} align="center" justify="center" gap="md">
+                <Title size={"83px"}>Get Ready for Tradian!</Title>
+                <Text c={"#3C162ECC"} className="text-center">
+                  Phase 1 of Tradian is coming in November. Join our training
+                  sessions to master the platform and seamlessly transition your
+                  import and export operations to Tradian.
+                </Text>
+                <Button component={Link} to="/" radius={"lg"}>
+                  Request for Training
+                </Button>
+              </Stack>
+            </BackgroundImage>
+            <Box
+                pos={"absolute"}
+                style={{
+                  top: 430,
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                }}
+                mt={100}
+            >
+              <Group justify={"center"} mb={"lg"}>
+                <Title order={2}>Quick Lookup</Title>
+                <Text c={"#3C162ECC"} className="text-center">
+                  Instantly find declaration status, tariff details and
+                  vessel/container tracking
+                </Text>
+              </Group>
+              <Paper shadow="xs" radius={100} p="lg" color={"#FFF1F1"}>
+                <Flex justify="center" gap={"xl"}>
+                  <Button
+                      variant={
+                        buttonState === "check-declaration"
+                            ? "filled"
+                            : "transparent"
+                      }
+                      radius="xl"
+                      size="lg"
+                      leftSection={<PiBoxArrowDownFill />}
+                      onClick={handleButtonClick}
+                  >
+                    Check Declaration
+                  </Button>
+                  <Button
+                      variant={
+                        buttonState === "container-tracking"
+                            ? "filled"
+                            : "transparent"
+                      }
+                      radius="xl"
+                      size="lg"
+                      leftSection={<MdQrCodeScanner />}
+                      onClick={handleButtonClick}
+                  >
+                    Container Tracking
+                  </Button>
+                </Flex>
+              </Paper>
+              <Paper shadow="xs" radius={50} p={50} mt={24} bg={"#3C162E"}>
+                <Flex mt={32} direction="column" gap="md">
+                  {buttonState === "check-declaration" ? <>
+                        <Title order={4} c={"white"}>
+                          Declaration Status
+                        </Title>
+                        <Text c={"white"}>
+                          Check import and export declaration status
+                        </Text>
+                        <Group gap="md" justify={"space-between"}>
+                          <TextInput
+                              value={cNumber}
+                              onChange={(event) => setCNumber(event.target.value)}
+                              label="C Number"
+                              c={"#FFA0A0"}
+                              placeholder={"C1234"}
+                              w={200}
+                          />
+                          <TextInput
+                              value={rNumber}
+                              onChange={(event) => setRNumber(event.target.value)}
+                              label="R Number"
+                              c={"#FFA0A0"}
+                              placeholder={"R/1234/00MP"}
+                              w={200}
+                          />
+                          <Button color="red" radius="lg" mt={"md"}>
+                            Search
+                          </Button>
+                        </Group>
+                      </> : null}
+                  {buttonState === "container-tracking" ? <>
+                        <Title order={4} c={"white"}>
+                          Container Tracking
+                        </Title>
+                        <Text c={"white"}>Retrieve Container status and ETA</Text>
+                        <Group gap="md" justify={"space-between"}>
+                          <TextInput
+                              value={containerID}
+                              onChange={(event) => setContainerID(event.target.value)}
+                              label="Container ID"
+                              c={"#FFA0A0"}
+                              placeholder={"Container ID"}
+                              w={400}
+                          />
+                          <Button color="red" radius="lg" mt={"md"}>
+                            Search
+                          </Button>
+                        </Group>
+                      </> : null}
+                </Flex>
+              </Paper>
+            </Box>
+          </Box>
+          <Box mt={400}>
+            <Flex
+                mb={24}
+                p={16}
+                mih={50}
+                gap="md"
+                justify="space-between"
+                align="center"
+                direction="row"
+                wrap="wrap"
+            >
+              <Title order={2}>Popular Procedures</Title>
+              <Group>
+                <Button
+                    variant={secondButtonState === "import" ? "filled" : "subtle"}
+                    radius="xl"
+                    size="lg"
+                    leftSection={<LuImport />}
+                    onClick={handleSecondButtonClick}
+                >
+                  Import
+                </Button>
+                <Button
+                    variant={secondButtonState === "export" ? "filled" : "subtle"}
+                    radius="xl"
+                    size="lg"
+                    leftSection={<CiExport />}
+                    onClick={handleSecondButtonClick}
+                >
+                  Export
+                </Button>
+              </Group>
+            </Flex>
+            <SimpleGrid cols={3}>
+              {secondButtonState === "import" ? <>
+                    <Paper
+                        shadow="xs"
+                        p="xl"
+                        radius="xl"
+                        style={{
+                          transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                          display: "flex",
+                          flexDirection: "column",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = "scale(1.05)";
+                          e.currentTarget.style.boxShadow =
+                              "0px 4px 12px rgba(0, 0, 0, 0.2)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = "scale(1)";
+                          e.currentTarget.style.boxShadow = "";
+                        }}
+                    >
+                      <GiCommercialAirplane size={36} />
+                      <Title order={4} mb="md" mt="sm">
+                        Customs Bond for Courier Goods
+                      </Title>
+                      <Text>
+                        Information about Customs Bond and Import procedure for
+                        Courier Goods
+                      </Text>
+                    </Paper>
+                    <Paper
+                        shadow="xs"
+                        p="xl"
+                        radius={"xl"}
+                        style={{
+                          transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = "scale(1.05)";
+                          e.currentTarget.style.boxShadow =
+                              "0px 4px 12px rgba(0, 0, 0, 0.2)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = "scale(1)";
+                          e.currentTarget.style.boxShadow = "";
+                        }}
+                    >
+                      <GiCommercialAirplane size={36} />
+                      <Title order={4} mb="md" mt="sm">
+                        Prohibited & Restricted Items
+                      </Title>
+                      <Text>
+                        Information about Prohibited & Restricted Items for Import
+                      </Text>
+                    </Paper>
+                    <Paper
+                        shadow="xs"
+                        p="xl"
+                        radius={"xl"}
+                        style={{
+                          transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = "scale(1.05)";
+                          e.currentTarget.style.boxShadow =
+                              "0px 4px 12px rgba(0, 0, 0, 0.2)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = "scale(1)";
+                          e.currentTarget.style.boxShadow = "";
+                        }}
+                    >
+                      <GiCommercialAirplane size={36} />
+                      <Title order={4} mb="md" mt="sm">
+                        Duty Exemptions
+                      </Title>
+                      <Text>
+                        Duty Exemptions & Allowances for Businesses wishing to
+                        Import goods to Maldives
+                      </Text>
+                    </Paper>
+                  </> : null}
+              {secondButtonState === "export" ? <>
+                    <Paper
+                        shadow="xs"
+                        p="xl"
+                        radius="xl"
+                        style={{
+                          transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                          display: "flex",
+                          flexDirection: "column",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = "scale(1.05)";
+                          e.currentTarget.style.boxShadow =
+                              "0px 4px 12px rgba(0, 0, 0, 0.2)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = "scale(1)";
+                          e.currentTarget.style.boxShadow = "";
+                        }}
+                    >
+                      <GiCommercialAirplane size={36} />
+                      <Title order={4} mb="md" mt="sm">
+                        Duty Exemptions & Allowances
+                      </Title>
+                      <Text>
+                        Duty Exemptions & Allowances for Businesses wishing to
+                        Export goods from Maldives
+                      </Text>
+                    </Paper>
+                    <Paper
+                        shadow="xs"
+                        p="xl"
+                        radius={"xl"}
+                        style={{
+                          transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = "scale(1.05)";
+                          e.currentTarget.style.boxShadow =
+                              "0px 4px 12px rgba(0, 0, 0, 0.2)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = "scale(1)";
+                          e.currentTarget.style.boxShadow = "";
+                        }}
+                    >
+                      <GiCommercialAirplane size={36} />
+                      <Title order={4} mb="md" mt="sm">
+                        Transit Procedures
+                      </Title>
+                      <Text>
+                        Information about the Transit Procedure in Maldives
+                      </Text>
+                    </Paper>
+                    <Paper
+                        shadow="xs"
+                        p="xl"
+                        radius={"xl"}
+                        style={{
+                          transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = "scale(1.05)";
+                          e.currentTarget.style.boxShadow =
+                              "0px 4px 12px rgba(0, 0, 0, 0.2)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = "scale(1)";
+                          e.currentTarget.style.boxShadow = "";
+                        }}
+                    >
+                      <GiCommercialAirplane size={36} />
+                      <Title order={4} mb="md" mt="sm">
+                        Restricted Items
+                      </Title>
+                      <Text>Items Restricted for Export from Maldives</Text>
+                    </Paper>
+                  </> : null}
+            </SimpleGrid>
+
+            <Box mt={100}>
+              <Card
+                  withBorder
+                  radius="md"
+                  p={0}
+                  className={classes.card}
+                  bg={"#3C162E"}
               >
-                <img alt={img.alt} src={img.src} className="object-contain" />
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-    </main>
+                <Group wrap="nowrap" gap={0} align="flex-start">
+                  <Box style={{ flex: 1 }} px={50} pt={100}>
+                    <RiCustomerServiceFill size={50} color={"white"}/>
+                    <Title order={2} mt={"lg"} c={"white"}>
+                      Need Assistance?
+                    </Title>
+                    <Text mt="sm" c={"white"}>
+                      If you have a problem and require assistance, get in touch
+                      with our support team.
+                    </Text>
+                    <Group align="right" my="lg">
+                      <Button radius={"xl"} color={"#2E1016"} c={"white"} variant={"outline"}>Find Help</Button>
+                    </Group>
+                  </Box>
+                  <div style={{ flex: 1, padding: 0, margin: 0 }}>
+                    <Image
+                        h={400}
+                        src="https://tradian.gov.mv/_nuxt/contactImage.BejrOICs.jpeg"
+                        style={{
+                          objectFit: "cover",
+                          padding: 0,
+                          margin: 0,
+                        }}
+                    />
+                  </div>
+                </Group>
+              </Card>
+            </Box>
+          </Box>
+
+          <Box mt={400}>
+            <Flex
+                mb={24}
+                p={16}
+                mih={50}
+                gap="md"
+                justify="space-between"
+                align="center"
+                direction="row"
+                wrap="wrap"
+            >
+              <Title order={2}>News and Updates</Title>
+            </Flex>
+            <SimpleGrid cols={3}>{cards}</SimpleGrid>
+          </Box>
+
+          <Box mt={100} mb={500}>
+            <Faq />
+          </Box>
+        </Container>
+      </Paper>
   );
 }
