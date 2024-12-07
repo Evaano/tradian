@@ -9,7 +9,9 @@ import {
   useMantineTheme,
   Box,
   Center,
-  Image, Title, Button
+  Image,
+  Title,
+  Button,
 } from "@mantine/core";
 import { Link } from "@remix-run/react";
 import {
@@ -20,7 +22,7 @@ import {
 } from "@tabler/icons-react";
 import { useState } from "react";
 
-import logo  from "~/assets/logo.svg"
+import logo from "~/assets/logo.svg";
 import { useOptionalUser } from "~/utils";
 
 import classes from "./header.module.css";
@@ -60,7 +62,7 @@ export function HeaderTabs() {
     const menuItems = link.links?.map((item) => (
       <Menu.Item key={item.link}>
         <Link to={item.link} className={classes.link}>
-         {item.label}
+          {item.label}
         </Link>
       </Menu.Item>
     ));
@@ -81,7 +83,9 @@ export function HeaderTabs() {
               onClick={(event) => event.preventDefault()}
             >
               <Center>
-                <Text fw={700} className={classes.linkLabel}>{link.label}</Text>
+                <Text fw={700} className={classes.linkLabel}>
+                  {link.label}
+                </Text>
                 <IconChevronDown size="0.9rem" stroke={1.5} />
               </Center>
             </a>
@@ -127,73 +131,73 @@ export function HeaderTabs() {
             {items}
           </Group>
           {user ? (
-          <Menu
-            width={260}
-            position="bottom-end"
-            radius={"md"}
-            transitionProps={{ transition: "pop-top-right" }}
-            onClose={() => setUserMenuOpened(false)}
-            onOpen={() => setUserMenuOpened(true)}
-            withinPortal
-          >
-            <Menu.Target>
-              <UnstyledButton>
-                <Group gap={7}>
-                  <Avatar
-                    src={
-                      "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-2.png"
-                    }
-                    alt={user?.email}
-                    radius="xl"
-                    size={20}
-                  />
-                  <Text fw={500} size="sm" lh={1} mr={3}>
-                    {user?.email}
-                  </Text>
-                  <IconChevronDown
-                    style={{ width: rem(12), height: rem(12) }}
-                    stroke={1.5}
-                  />
-                </Group>
-              </UnstyledButton>
-            </Menu.Target>
-            <Menu.Dropdown>
-              <Menu.Item
-                leftSection={
-                  <IconMessage
-                    style={{ width: rem(16), height: rem(16) }}
-                    color={theme.colors.blue[6]}
-                    stroke={1.5}
-                  />
-                }
-              >
-                Your Events
-              </Menu.Item>
+            <Menu
+              width={260}
+              position="bottom-end"
+              radius={"md"}
+              transitionProps={{ transition: "pop-top-right" }}
+              onClose={() => setUserMenuOpened(false)}
+              onOpen={() => setUserMenuOpened(true)}
+              withinPortal
+            >
+              <Menu.Target>
+                <UnstyledButton>
+                  <Group gap={7}>
+                    <Avatar
+                      src={
+                        "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-2.png"
+                      }
+                      alt={user?.email}
+                      radius="xl"
+                      size={20}
+                    />
+                    <Text fw={500} size="sm" lh={1} mr={3}>
+                      {user?.email}
+                    </Text>
+                    <IconChevronDown
+                      style={{ width: rem(12), height: rem(12) }}
+                      stroke={1.5}
+                    />
+                  </Group>
+                </UnstyledButton>
+              </Menu.Target>
+              <Menu.Dropdown>
+                <Menu.Item
+                  leftSection={
+                    <IconMessage
+                      style={{ width: rem(16), height: rem(16) }}
+                      color={theme.colors.blue[6]}
+                      stroke={1.5}
+                    />
+                  }
+                >
+                  Your Events
+                </Menu.Item>
 
-              <Menu.Label>Settings</Menu.Label>
-              <Menu.Item
-                leftSection={
-                  <IconSettings
-                    style={{ width: rem(16), height: rem(16) }}
-                    stroke={1.5}
-                  />
-                }
-              >
-                Account settings
-              </Menu.Item>
-              <Menu.Item
-                onClick={handleLogout}
-                leftSection={
-                  <IconLogout
-                    style={{ width: rem(16), height: rem(16) }}
-                    stroke={1.5}
-                  />
-                }
-              >
-                Logout
-              </Menu.Item>
-            </Menu.Dropdown>
-          </Menu>
+                <Menu.Label>Settings</Menu.Label>
+                <Menu.Item
+                  leftSection={
+                    <IconSettings
+                      style={{ width: rem(16), height: rem(16) }}
+                      stroke={1.5}
+                    />
+                  }
+                >
+                  Account settings
+                </Menu.Item>
+                <Menu.Item
+                  onClick={handleLogout}
+                  leftSection={
+                    <IconLogout
+                      style={{ width: rem(16), height: rem(16) }}
+                      stroke={1.5}
+                    />
+                  }
+                >
+                  Logout
+                </Menu.Item>
+              </Menu.Dropdown>
+            </Menu>
           ) : (
             <Button
               variant="filled"
@@ -204,7 +208,7 @@ export function HeaderTabs() {
             >
               Login
             </Button>
-          ) }
+          )}
         </div>
       </Container>
     </header>

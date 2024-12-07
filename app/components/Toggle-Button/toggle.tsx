@@ -1,10 +1,18 @@
-import { Switch, useMantineTheme, rem, useMantineColorScheme, useComputedColorScheme } from "@mantine/core";
+import {
+  Switch,
+  useMantineTheme,
+  rem,
+  useMantineColorScheme,
+  useComputedColorScheme,
+} from "@mantine/core";
 import { IconSun, IconMoonStars } from "@tabler/icons-react";
 
 export function ToggleButton() {
   const theme = useMantineTheme();
   const { setColorScheme } = useMantineColorScheme();
-  const computedColorScheme = useComputedColorScheme("light", { getInitialValueInEffect: true });
+  const computedColorScheme = useComputedColorScheme("light", {
+    getInitialValueInEffect: true,
+  });
 
   const sunIcon = (
     <IconSun

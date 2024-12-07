@@ -1,58 +1,58 @@
 .wrapper {
-    padding-top: calc(var(--mantine-spacing-xl) * 2);
-    min-height: 700px;
-    background-image: radial-gradient(
-            var(--mantine-color-white) 0%,
-            var(--mantine-color-white) 100%
-    );
-    box-shadow: var(--mantine-shadow-lg);
-    background-repeat: no-repeat;
-    background-position: top left;
-    border-radius: var(--mantine-spacing-xl);
-    position: relative;
-    color: var(--mantine-color-black);
+  padding-top: calc(var(--mantine-spacing-xl) * 2);
+  min-height: 700px;
+  background-image: radial-gradient(
+    var(--mantine-color-white) 0%,
+    var(--mantine-color-white) 100%
+  );
+  box-shadow: var(--mantine-shadow-lg);
+  background-repeat: no-repeat;
+  background-position: top left;
+  border-radius: var(--mantine-spacing-xl);
+  position: relative;
+  color: var(--mantine-color-black);
 }
 
 .item {
-    background-color: var(--mantine-color-white);
-    border-bottom: 0;
-    border-radius: var(--mantine-radius-md);
-    box-shadow: var(--mantine-shadow-lg);
-    overflow: hidden;
+  background-color: var(--mantine-color-white);
+  border-bottom: 0;
+  border-radius: var(--mantine-radius-md);
+  box-shadow: var(--mantine-shadow-lg);
+  overflow: hidden;
 }
 
 .control {
-    font-size: var(--mantine-font-size-lg);
-    padding: var(--mantine-spacing-lg) var(--mantine-spacing-xl);
-    color: var(--mantine-color-black);
+  font-size: var(--mantine-font-size-lg);
+  padding: var(--mantine-spacing-lg) var(--mantine-spacing-xl);
+  color: var(--mantine-color-black);
 
-    @mixin hover {
-        background-color: transparent;
-    }
+  @mixin hover {
+    background-color: transparent;
+  }
 }
 
 .content {
-    padding-left: var(--mantine-spacing-xl);
-    line-height: 1.6;
-    color: var(--mantine-color-black);
+  padding-left: var(--mantine-spacing-xl);
+  line-height: 1.6;
+  color: var(--mantine-color-black);
 }
 
 .icon {
-    margin-left: var(--mantine-spacing-md);
+  margin-left: var(--mantine-spacing-md);
 }
 
 .itemOpened {
-    & .icon {
-        transform: rotate(45deg);
-    }
+  & .icon {
+    transform: rotate(45deg);
+  }
 }
 
 .button {
-    display: block;
-    margin-top: var(--mantine-spacing-md);
+  display: block;
+  margin-top: var(--mantine-spacing-md);
 
-    @media (max-width: $mantine-breakpoint-sm) {
-        display: block;
-        width: 100%;
-    }
+  @media (max-width: $mantine-breakpoint-sm) {
+    display: block;
+    width: 100%;
+  }
 }

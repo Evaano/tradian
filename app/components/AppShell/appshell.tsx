@@ -15,7 +15,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
       // More precise bottom detection
       const scrolledToBottom =
-          windowHeight + currentScrollY >= documentHeight - 50;
+        windowHeight + currentScrollY >= documentHeight - 50;
 
       // Update state only if scrolledToBottom changes
       if (scrolledToBottom !== isAtBottom) {
@@ -35,21 +35,23 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <AppShell
-      header={{ height: 80, offset: false, }}
+      header={{ height: 80, offset: false }}
       footer={{
         height: 500,
         collapsed: !isAtBottom,
-        offset: false
+        offset: false,
       }}
       style={{
-        backgroundColor: "#F6F6F6"
+        backgroundColor: "#F6F6F6",
       }}
       padding="md"
       className="overflow-hidden"
     >
-      <AppShell.Header style={{
-        backgroundColor: "#F6F6F6"
-      }}>
+      <AppShell.Header
+        style={{
+          backgroundColor: "#F6F6F6",
+        }}
+      >
         <HeaderTabs />
       </AppShell.Header>
 

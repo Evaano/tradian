@@ -1,9 +1,9 @@
 import { createTheme, DEFAULT_THEME, mergeMantineTheme } from "@mantine/core";
-import {Inter} from 'next/font/google'
+import { Inter } from "next/font/google";
 
 const themeOverride = createTheme({
   other: {
-    backgroundColor: '#f6f6f6'
+    backgroundColor: "#f6f6f6",
   },
   colors: {
     // #f9ac4e - earth-yellow-5

@@ -2,13 +2,18 @@ import { Accordion, Container, Title } from "@mantine/core";
 
 import classes from "./registration-faq.module.css";
 
-export function FaqSimple({
-  title,
-  faqs,
-}: {
+interface FaqItem {
   title: string;
-  faqs: { subtitle: string; description: string }[];
-}) {
+  category: string;
+  content: string;
+}
+
+interface FaqSimpleProps {
+  title: string;
+  faqs: FaqItem[];
+}
+
+export function FaqSimple({ title, faqs }: FaqSimpleProps) {
   return (
     <Container size="xl" className={classes.wrapper}>
       <Title ta="left" className={classes.title}>
@@ -20,10 +25,12 @@ export function FaqSimple({
           <Accordion.Item
             key={index}
             className={classes.item}
-            value="reset-password"
+            value={faq.title}
           >
-            <Accordion.Control>{faq.subtitle}</Accordion.Control>
-            <Accordion.Panel>{faq.description}</Accordion.Panel>
+            <Accordion.Control>{faq.title}</Accordion.Control>
+            <Accordion.Panel>
+              <div dangerouslySetInnerHTML={{ __html: faq.content }} />
+            </Accordion.Panel>
           </Accordion.Item>
         ))}
       </Accordion>
