@@ -1,6 +1,7 @@
 import { AppShell, rem } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 
+import classes from "~/components/AppShell/appshell.module.css";
 import { Footer } from "~/components/Footer/footer";
 import { HeaderTabs } from "~/components/Header/header";
 
@@ -41,17 +42,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         collapsed: !isAtBottom,
         offset: false,
       }}
-      style={{
-        backgroundColor: "#F6F6F6",
-      }}
       padding="md"
-      className="overflow-hidden"
+      className={classes.main}
     >
-      <AppShell.Header
-        style={{
-          backgroundColor: "#F6F6F6",
-        }}
-      >
+      <AppShell.Header className={classes.header}>
         <HeaderTabs />
       </AppShell.Header>
 

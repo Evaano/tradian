@@ -33,6 +33,18 @@ const themeOverride = createTheme({
       "#b71212",
       "#a1040c",
     ],
+    dark: [
+      "#aeb2c8", // Light grey-blue
+      "#7c829f", // Muted dark blue-grey
+      "#565d7a", // Darker blue-grey
+      "#404662", // Deep blue-black
+      "#2f354c", // Darker blue-black
+      "#252a3d", // Very dark blue-black
+      "#1b2031", // Near black-blue
+      "#141825", // Almost black-blue
+      "#0a0e18", // Dark black-blue
+      "#03040c", // Pure black with a subtle blue hue
+    ],
   },
   fontFamily: "Inter",
   headings: { fontFamily: "sans-serif" },

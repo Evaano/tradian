@@ -15,7 +15,7 @@ interface FaqSimpleProps {
 
 export function FaqSimple({ title, faqs }: FaqSimpleProps) {
   return (
-    <Container size="xl" className={classes.wrapper}>
+    <Container size="xl" className={classes.wrapper} p="xl">
       <Title ta="left" className={classes.title}>
         {title}
       </Title>

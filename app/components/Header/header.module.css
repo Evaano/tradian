@@ -1,7 +1,14 @@
 .header {
   padding-top: 12px;
   margin-bottom: rem(120px);
-  background-color: #f6f6f6;
+
+  @mixin dark {
+    background-color: var(--mantine-color-dark-6);
+  }
+
+  @mixin light {
+    background-color: "#f6f6f6";
+  }
 }
 
 .inner {

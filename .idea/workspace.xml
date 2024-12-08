@@ -5,32 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e003cfd-368d-4c62-aa36-d156ae69f360" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/components/article-card/article-filter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/duty-stacks/duty-stack.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/routes/contact.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/routes/support.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/AppShell/appshell.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/AppShell/appshell.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Carousel/carousel.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Carousel/carousel.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Contact-icons/contact-icons.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Contact-icons/contact-icons.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Contact-icons/contact-icons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Contact-icons/contact-icons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Contact-icons/contact.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Contact-icons/contact.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Footer/footer.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Footer/footer.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Footer/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Footer/footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Header/header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Header/header.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/Header/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Header/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Toggle-Button/toggle.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Toggle-Button/toggle.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Toggle-Button/toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Toggle-Button/toggle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/article-card/article-card.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/article-card/article-card.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/article-card/card.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/article-card/card.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/business/business.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/business/business.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/faq/faq.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/faq/faq.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/navbar/navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navbar/navbar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/navbar/navbarlinks.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/registration-faq/registration-faq.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/registration-faq/registration-faq.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/registration-faq/registration-faq.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/registration-faq/registration-faq.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/_index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/_index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/individual.duty.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/individual.duty.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/individual.registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/individual.registration.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/individual.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/individual.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/join.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/join.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/notes.$noteId.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/notes._index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/notes.new.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/notes.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
@@ -57,7 +47,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/Documents/Coding/Remix/inventory&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/Documents/Coding/Remix/tradian/app/routes&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -67,6 +57,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\Documents\Coding\Remix\tradian\app\routes" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -88,7 +83,11 @@
       <workItem from="1733534346827" duration="4245000" />
       <workItem from="1733553176790" duration="9173000" />
       <workItem from="1733562406169" duration="333000" />
-      <workItem from="1733562752562" duration="8095000" />
+      <workItem from="1733562752562" duration="20174000" />
+      <workItem from="1733584009168" duration="25000" />
+      <workItem from="1733651958383" duration="6131000" />
+      <workItem from="1733658114789" duration="3155000" />
+      <workItem from="1733661326312" duration="858000" />
     </task>
     <servers />
   </component>

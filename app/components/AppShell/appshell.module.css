@@ -1,0 +1,22 @@
+.main {
+
+    overflow: hidden;
+
+  @mixin dark {
+    background-color: var(--mantine-color-dark-6);
+  }
+
+  @mixin light {
+    background-color: "#f6f6f6";
+  }
+}
+
+.header {
+  @mixin dark {
+    background-color: var(--mantine-color-dark-6);
+  }
+
+  @mixin light {
+    background-color: "#f6f6f6";
+  }
+}

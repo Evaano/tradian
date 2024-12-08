@@ -10,7 +10,6 @@ import {
   Box,
   Center,
   Image,
-  Title,
   Button,
 } from "@mantine/core";
 import { Link } from "@remix-run/react";
@@ -27,36 +26,37 @@ import { useOptionalUser } from "~/utils";
 
 import classes from "./header.module.css";
 
-const links = [
-  {
-    link: "#1",
-    label: "Business",
-    links: [
-      { link: "/events/view-all", label: "View Events" },
-      { link: "/events/add", label: "Add Events" },
-      { link: "/events/calendar", label: "View Calender" },
-    ],
-  },
-  {
-    link: "#2",
-    label: "Individual",
-    links: [
-      { link: "/individual/registration", label: "Registration" },
-      { link: "/individual/duty", label: "Duty Exemptions" },
-      { link: "/", label: "Declaration Processing" },
-      { link: "/", label: "Prohibited Items" },
-      { link: "/", label: "Restricted Items" },
-      { link: "/", label: "Postal Parcels" },
-      { link: "/", label: "Customs Bond" },
-    ],
-  },
-  { link: "/contact", label: "Support" },
-];
-
 export function HeaderTabs() {
   const user = useOptionalUser();
   const theme = useMantineTheme();
   const [, setUserMenuOpened] = useState(false);
+
+  const links = [
+    {
+      link: "#1",
+      label: "Business",
+      links: [
+        { link: "/events/view-all", label: "View Events" },
+        { link: "/events/add", label: "Add Events" },
+        { link: "/events/calendar", label: "View Calendar" },
+      ],
+    },
+    {
+      link: "#2",
+      label: "Individual",
+      links: [
+        { link: "/individual/registration", label: "Registration" },
+        { link: "/individual/duty", label: "Duty Exemptions" },
+        { link: "/", label: "Declaration Processing" },
+        { link: "/", label: "Prohibited Items" },
+        { link: "/", label: "Restricted Items" },
+        { link: "/", label: "Postal Parcels" },
+        { link: "/", label: "Customs Bond" },
+      ],
+    },
+    { link: "/support", label: "Support" },
+    ...(user ? [{ link: "/contact", label: "Contact Us" }] : []),
+  ];
 
   const items = links.map((link) => {
     const menuItems = link.links?.map((item) => (

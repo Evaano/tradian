@@ -34,8 +34,8 @@ export function ContactIcon({
 }
 
 const MOCKDATA = [
-  { title: "Email", description: "eventhubmv@gmail.com", icon: IconAt },
-  { title: "Phone", description: "+(960) 9534835", icon: IconPhone },
+  { title: "Email", description: "evaan0202@gmail.com", icon: IconAt },
+  { title: "Phone", description: "+(960) 9190402", icon: IconPhone },
   { title: "Address", description: "10539, Hulhumale", icon: IconMapPin },
   { title: "Working hours", description: "2 p.m. – 5 p.m.", icon: IconSun },
 ];

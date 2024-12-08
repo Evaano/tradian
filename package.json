@@ -32,6 +32,7 @@
     "@isaacs/express-prometheus-middleware": "^1.2.1",
     "@mantine/core": "^7.14.3",
     "@mantine/hooks": "^7.14.3",
+    "@mantine/notifications": "^7.14.3",
     "@prisma/client": "^5.20.0",
     "@remix-run/css-bundle": "^2.15.0",
     "@remix-run/express": "^2.15.0",
@@ -53,7 +54,8 @@
     "react-icons": "^5.4.0",
     "react-markdown": "^9.0.1",
     "source-map-support": "^0.5.21",
-    "tiny-invariant": "^1.3.3"
+    "tiny-invariant": "^1.3.3",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@faker-js/faker": "^9.0.3",
