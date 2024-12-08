@@ -39,3 +39,29 @@
 .linkLabel {
   margin-right: rem(5px);
 }
+
+.mainLink {
+  /* Style for main category links */
+  padding: 0.5rem 0;
+  transition: background-color 0.2s ease; /* Add smooth transition */
+}
+
+.mainLink:hover {
+  background-color: #f5f5f5; /* Subtle hover effect */
+}
+
+.activeLink {
+  /* Style for the active main category */
+  background-color: #e0e0e0; /* More pronounced highlight */
+  font-weight: 600;
+}
+
+.sublink {
+  /* Style for subcategory links */
+  text-decoration: none; /* Remove underlines */
+  color: inherit;
+}
+
+.sublink:hover {
+  text-decoration: underline; /* Underline on hover */
+}

@@ -1,13 +1,3 @@
-# Remix Blues Stack
-
-![The Remix Blues Stack](https://repository-images.githubusercontent.com/461012689/37d5bd8b-fa9c-4ab0-893c-f0a199d5012d)
-
-Learn more about [Remix Stacks](https://remix.run/stacks).
-
-```
-npx create-remix@latest --template remix-run/blues-stack
-```
-
 ## Project Setup Instructions
 
 Follow these steps to set up the project locally:
@@ -85,5 +75,6 @@ npm start
 ### Notes:
 - **Slow Builds**: The Remix Classic compiler is being used, which can cause slower builds (also an older version of the stack).
 - **Project Structure**: This was done quickly, so everything needs refactoring and backend for all other routes.
-
+- **Working Routes**: Home, Individual Registration and Duty Exemptions, Support, login, Join, Logout.
+- **Incomplete**: Didn't have enough time to fix the Header.
 ---

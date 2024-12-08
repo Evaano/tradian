@@ -5,26 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e003cfd-368d-4c62-aa36-d156ae69f360" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/components/article-card/article-filter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/duty-stacks/duty-stack.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes/contact.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes/support.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Header/header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Header/header.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/Header/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Header/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/navbar/navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/navbar/navbar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/registration-faq/registration-faq.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/registration-faq/registration-faq.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/registration-faq/registration-faq.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/registration-faq/registration-faq.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/individual.duty.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/individual.duty.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/join.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/join.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/notes.$noteId.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/notes._index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/notes.new.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/notes.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/seed.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/seed.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/more-info/info.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/more-info/info.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +73,7 @@
       <workItem from="1733651958383" duration="6131000" />
       <workItem from="1733658114789" duration="3155000" />
       <workItem from="1733661326312" duration="858000" />
+      <workItem from="1733670324658" duration="4761000" />
     </task>
     <servers />
   </component>
