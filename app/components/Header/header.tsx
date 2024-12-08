@@ -6,19 +6,15 @@ import {
   Text,
   Menu,
   rem,
-  useMantineTheme,
   Box,
   Center,
   Image,
   Button,
+  Modal,
 } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 import { Link } from "@remix-run/react";
-import {
-  IconLogout,
-  IconMessage,
-  IconSettings,
-  IconChevronDown,
-} from "@tabler/icons-react";
+import { IconLogout, IconChevronDown } from "@tabler/icons-react";
 import { useState } from "react";
 
 import logo from "~/assets/logo.svg";
@@ -28,8 +24,8 @@ import classes from "./header.module.css";
 
 export function HeaderTabs() {
   const user = useOptionalUser();
-  const theme = useMantineTheme();
   const [, setUserMenuOpened] = useState(false);
+  const [opened, { open, close }] = useDisclosure(false);
 
   const links = [
     {
@@ -162,29 +158,7 @@ export function HeaderTabs() {
                 </UnstyledButton>
               </Menu.Target>
               <Menu.Dropdown>
-                <Menu.Item
-                  leftSection={
-                    <IconMessage
-                      style={{ width: rem(16), height: rem(16) }}
-                      color={theme.colors.blue[6]}
-                      stroke={1.5}
-                    />
-                  }
-                >
-                  Your Events
-                </Menu.Item>
-
                 <Menu.Label>Settings</Menu.Label>
-                <Menu.Item
-                  leftSection={
-                    <IconSettings
-                      style={{ width: rem(16), height: rem(16) }}
-                      stroke={1.5}
-                    />
-                  }
-                >
-                  Account settings
-                </Menu.Item>
                 <Menu.Item
                   onClick={handleLogout}
                   leftSection={
@@ -199,17 +173,15 @@ export function HeaderTabs() {
               </Menu.Dropdown>
             </Menu>
           ) : (
-            <Button
-              variant="filled"
-              size="sm"
-              component={Link}
-              to={"/login"}
-              radius={"xl"}
-            >
+            <Button variant="filled" size="sm" onClick={open} radius={"xl"}>
               Login
             </Button>
           )}
         </div>
+
+        <Modal opened={opened} onClose={close} title="Authentication">
+          {/* Modal content */}
+        </Modal>
       </Container>
     </header>
   );

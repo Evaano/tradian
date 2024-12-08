@@ -67,6 +67,15 @@ Start the Remix development server:
 npm run dev
 ```
 
+or build and run
+
+```bash
+npm run build
+```
+```bash
+npm start
+```
+
 ### 8. Login and Sign Up
 
 - The user `rachel@remix.run` with the password `racheliscool` will be created during the database seeding. But you can sign up with a valid email.
